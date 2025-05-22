@@ -70,16 +70,29 @@ body {
     margin: 0;
   }
   footer {
-    padding: 2em;
-    background-color: #353535;
-    color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    padding: 2em;
+    background-color: #353535;
+    color: #fff;
   }
   footer p {
+    font-weight: bold;
+  }
+  footer ul {
+    display: flex;
+    gap: 2em;
+    list-style: none;
+    padding: 0;
     margin: 0;
+  }
+  footer ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  footer ul li a:hover {
+    text-decoration: underline;
   }
 }
 /***** Header et logo *****/
