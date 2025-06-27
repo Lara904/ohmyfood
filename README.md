@@ -6,7 +6,7 @@ Ohmyfood est un site vitrine responsive (mobile-first) pour une startup fictive 
 
 ## 🚀 Démo en ligne
 
-🔗 [p4-ohmyfood.netlify.app/)
+🔗 [p4-ohmyfood.netlify.app](https://p4-ohmyfood.netlify.app)
 
 ---
 
