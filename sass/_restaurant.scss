@@ -8,7 +8,7 @@ header {
       position: absolute;
       left: 1em;
       font-size: 1.2em;
-      color: $dark;
+      color: $color-dark;
     }
   
     .logo {
@@ -31,10 +31,11 @@ header {
   
 /***** Menu container arrondi *****/
 .restaurant-menu {
-    background-color: $background;
+    background-color: $color-bg;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     margin-top: -40px;
+    margin-bottom: -17px;
     padding: 2em 1em 4em 1em;
     position: relative;
     z-index: 2;
@@ -48,8 +49,10 @@ header {
     margin-bottom: 2em;
   
     h1 {
-      font-size: 1.8em;
-      font-weight: bold;
+      font-family: 'Shrikhand', cursive;
+      font-size: 1.7em;
+      font-weight: normal; // la police est naturellement épaisse
+      letter-spacing: 1px;
     }
   
     i {
@@ -58,7 +61,7 @@ header {
       transition: color 0.3s ease;
   
       &:hover {
-        color: $primary;
+        color: $color-primary;
       }
     }
 }
@@ -72,57 +75,140 @@ header {
       text-transform: uppercase;
       font-weight: 400;
       margin-bottom: 1em;
+      color: grey;
   
       &::after {
         content: "";
         display: block;
         width: 40px;
         height: 3px;
-        background: $tertiary;
+        background: #24f6c2;
         margin-top: 0.5em;
       }
     }
 }
-  
-/***** Plat individuel animé *****/
-.dish {
-    background: $light;
+/***** Plat individuel animé *****/ 
+  .dish {
+    background: $color-white;
     border-radius: 15px;
-    padding: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
     margin-bottom: 1em;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     animation: fadeInDish 0.4s ease forwards;
     opacity: 0;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
+    min-height: 70px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+
+    .dish-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;   
+      h3 {
+        font-size: 1em;
+        margin-bottom: 0.3em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    
+      p {
+        font-size: 0.9em;
+        color: gray;
+        margin-bottom: 0.5em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
   
-    h3 {
-      font-size: 1em;
-      margin-bottom: 0.3em;
     }
-  
-    p {
-      font-size: 0.9em;
-      color: gray;
-      margin-bottom: 0.5em;
+
+    .dish-price {
+        font-weight: bold;
+        font-size: 1.1em;
+        padding: 1em;
+        white-space: nowrap;
+        transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
-  
-    span {
-      font-weight: bold;
-      white-space: nowrap;
-      margin-left: 1em;
+
+    .dish-confirmation {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 80px;
+        background: linear-gradient(135deg, #24f6c2 0%, #1dd1a1 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(100%);
+        opacity: 0;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        border-radius: 0 15px 15px 0;
+    }
+
+    .dish-wrapIcon {
+        background: white;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .dish-icon {
+        color: #24f6c2;
+        font-size: 0.9em;
+        font-weight: bold;
     }
 }
+
+.dish:hover {
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+
+/* Animation au hover/clic */
+    .dish:hover .dish-info,
+    .dish.selected .dish-info {
+        padding-right: 80px;
+    }
+
+    .dish:hover .dish-price,
+    .dish.selected .dish-price {
+        transform: translateX(-80px);
+    }
+
+    .dish:hover .dish-confirmation,
+    .dish.selected .dish-confirmation {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+  .dish:hover .dish-wrapIcon,
+  .dish.selected .dish-wrapIcon {
+      transform: rotate(360deg);
+  }
+
   
 /***** Bouton commander *****/
 .command-button {
     display: block;
     margin: 2em auto 0;
-    padding: 1em 2em;
-    background: linear-gradient(to right, $primary, $secondary);
-    color: $light;
-    font-weight: bold;
+    padding: 1em 3.5em;
+    min-width: 200px; 
+    background: linear-gradient(to bottom, $color-secondary 5%, $color-primary 100%);
+    color: $color-white;
+    font-weight: 600;
     border: none;
     border-radius: 30px;
     text-align: center;
@@ -130,6 +216,7 @@ header {
     font-size: 1em;
     width: fit-content;
     transition: transform 0.3s ease;
+    box-shadow: 0 8px 24px 0 rgba(44, 37, 101, 0.13); 
   
     &:hover {
       transform: scale(1.05);
@@ -147,14 +234,48 @@ header {
       transform: translateY(0);
     }
 }
+
+/* Animation séquentielle des plats */
+.dish:nth-child(1) { animation-delay: 0.1s; }
+.dish:nth-child(2) { animation-delay: 0.2s; }
+.dish:nth-child(3) { animation-delay: 0.3s; }
+.dish:nth-child(4) { animation-delay: 0.4s; }
+.dish:nth-child(5) { animation-delay: 0.5s; }
   
 /***** Responsive restaurant page *****/
 @media screen and (min-width: 1024px) {
+    main {
+      background: $color-white;
+    }
+
+    .restaurant-banner {
+        position: relative;
+      
+        img {
+          width: 100%;
+          height: 450px;
+          object-fit: cover;
+          display: block;
+        }
+    }
     .restaurant-menu {
-      padding: 3em 6em;
+      position: relative;
+      top: -40px;           // décale le menu vers le haut pour qu’il chevauche le header
+      width: 90%;           // ou width fixe, ex: 900px
+      max-width: 900px;     // réduit la largeur max
+      margin: 0 auto;       // centre
+      padding: 1.5em 3em;     // moins de padding vertical et horizontal
+      background: $color-bg;     // s’assurer du fond blanc
+      border-radius: 1rem;  // coins arrondis
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      margin-bottom: -40px;
     }
   
     .restaurant-header {
+      display: flex;
+      justify-content: center;  // centre le contenu
+      align-items: center;
+      gap: 1em;
       h1 {
         font-size: 2.2em;
       }
@@ -163,4 +284,47 @@ header {
     .menu-section h2 {
       font-size: 1.3em;
     }
+}
+//***********Footer*********//
+footer {
+  background: $color-footer;
+  color: $color-white;
+  padding: 2em 1.2em 1.1em 1.2em;
+  margin-top: 0;
+
+  p {
+    font-family: 'Shrikhand', cursive;
+    font-size: 1.22em;
+    margin-bottom: 1em;
+    letter-spacing: 1px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 0.45em;
+      font-size: 0.8em;
+      display: flex;
+      align-items: center;
+       &:nth-child(3), &:nth-child(4) {
+      // Ajoute une marge à gauche pour aligner le texte avec les deux premiers liens
+          margin-left: -0.7em; // Ajuste selon la taille réelle de tes icônes + espace
+        }
+
+      a {
+        color: $color-white;
+        text-decoration: none;
+        font-weight: 400;
+        transition: color 0.13s;
+        margin-left: 0.5em;
+      }
+      i {
+        font-size: 1em;
+        margin-right: 0.3em;
+      }
+    }
+  }
 }
