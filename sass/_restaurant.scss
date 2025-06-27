@@ -179,23 +179,23 @@ header {
 
 /* Animation au hover/clic */
     .dish:hover .dish-info,
-    .dish.selected .dish-info {
+    .dish.selected .dish-info { //padding du texte pour ne pas être recouvert
         padding-right: 80px;
     }
 
     .dish:hover .dish-price,
-    .dish.selected .dish-price {
+    .dish.selected .dish-price { //deplacement du prix sur la gauche
         transform: translateX(-80px);
     }
 
     .dish:hover .dish-confirmation,
-    .dish.selected .dish-confirmation {
+    .dish.selected .dish-confirmation { //apparition du bloc confirmation
         transform: translateX(0);
         opacity: 1;
     }
 
   .dish:hover .dish-wrapIcon,
-  .dish.selected .dish-wrapIcon {
+  .dish.selected .dish-wrapIcon { //rotation de l'icone
       transform: rotate(360deg);
   }
 
