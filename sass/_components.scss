@@ -11,27 +11,47 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+  background: white;
+  width: 100%;
   height: 100vh;
-  width: 100vw;
-  background: $color-white; // ou autre fond
+  z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10000;
+  animation: fadeOut 1s 1s forwards; // démarre après 1s
 }
 
 .spinner {
-  width: 50px;
-  height: 50px;
-  border: 5px solid lighten($color-primary, 35%);
+  border: 5px solid #f3f3f3;
   border-top: 5px solid $color-primary;
   border-radius: 50%;
+  width: 50px;
+  height: 50px;
   animation: spin 0.8s linear infinite;
 }
 
+.content {
+  animation: fadeIn 0.5s ease 1s forwards;
+  opacity: 0;
+}
+
+/* Animations */
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
   }
 }
 
@@ -144,54 +164,58 @@ header {
   }
 
   li {
-    background: $color-white;
-    border-radius: 18px;
-    box-shadow: $shadow;
-    padding: 1.1em 1em 1.1em 2.9em;
-    min-width: 0;         // permet au texte de rétrécir si besoin
-    width: 100%;          // prend la largeur du parent
-    word-break: break-word; // coupe si trop long
-    font-size: 1em;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    text-align: center;  
-    position: relative;
-    margin-left: 1em;                // espace pour le débord du numéro
-    margin-bottom: 1.2em;
-    min-height: 52px;
-
-    &::before {
-      counter-increment: steps;
-      content: counter(steps);
-      position: absolute;
-      left: -0.8em;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 1.8em;
-      height: 1.8em;
-      background: $color-primary;
-      color: $color-white;
-      border-radius: 50%;
+      background: $color-white;
+      border-radius: 18px;
+      box-shadow: $shadow;
+      padding: 1.1em 1em 1.1em 2.9em;
+      min-width: 0;         // permet au texte de rétrécir si besoin
+      width: 100%;          // prend la largeur du parent
+      word-break: break-word; // coupe si trop long
+      font-size: 1em;
+      font-weight: 500;
       display: flex;
       align-items: center;
-      justify-content: center;
-      font-size: 1.12em;
-      font-weight: 700;
-      box-shadow: 0 2px 6px rgba(147,86,220,0.13);
-      z-index: 1;
-       border: 3px solid $color-bg; // optionnel, pour effet "flottant"
-    }
+      text-align: center;  
+      position: relative;
+      margin-left: 1em;                // espace pour le débord du numéro
+      margin-bottom: 1.2em;
+      min-height: 52px;
+      transition: all 0.3s ease;
 
-    i {
-      color: #7e7a7a;
-      font-size: 1.2em;
-      margin-right: 0.8em;
+      &::before {
+        counter-increment: steps;
+        content: counter(steps);
+        position: absolute;
+        left: -0.8em;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1.8em;
+        height: 1.8em;
+        background: $color-primary;
+        color: $color-white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.12em;
+        font-weight: 700;
+        box-shadow: 0 2px 6px rgba(147,86,220,0.13);
+        z-index: 1;
+        border: 3px solid $color-bg; // optionnel, pour effet "flottant"
+      }
+
+      i {
+        color: #7e7a7a;
+        font-size: 1.2em;
+        margin-right: 0.8em;
+        transition: color 0.3s ease;
+        cursor: pointer; 
+      }
+
+      &:hover i {
+        color: $color-primary;
+      }
     }
-  }
-}
-.steps ol li:last-child i {
-  color: $color-primary; // violet pour le dernier (dégustez)
 }
 
 // -------------------- RESTAURANTS --------------------
@@ -222,7 +246,7 @@ header {
 
     .card-img {
       width: 100%;
-      aspect-ratio: 16 / 11;;
+      aspect-ratio: 16 / 11;
       position: relative;
       overflow: hidden;
 
@@ -237,7 +261,7 @@ header {
         top: 15px;
         right: 15px;
         background: $color-badge;
-        color: $color-dark;
+        color: #63978a;
         font-size: 0.93em;
         font-weight: 700;
         border-radius: 7px;
@@ -268,56 +292,51 @@ header {
           margin: 0;
         }
       }
-      .heart {
-        font-size: 1.32em;
-        color: #d0cfd2;
-        transition: color 0.17s;
+    }
+    
+    // Container pour le cœur positionné en dehors du lien
+    .heart-container {
+      position: absolute;
+      bottom: 10%;
+      right: 1em;
+      transform: translateY(-50%);
+      z-index: 10;
+
+      .heart-checkbox {
+        display: none;
+      }
+
+      .heart-label {
         cursor: pointer;
-        margin-left: 1em;
+        position: relative;
         display: flex;
         align-items: center;
+        font-size: 1.35em;
 
-        &.active {
-          color: $color-primary;
+        .heart-full {
+          background: linear-gradient(to bottom, #9356DC, #FF79DA);
+          background-clip: text;
+          -webkit-background-clip: text;
+          color: transparent; 
+          -webkit-text-fill-color: transparent;
+          position: absolute;
+          left: 0;
+          opacity: 0;
+          transition: opacity 0.18s;
+          pointer-events: none;
+        }
+        .heart-empty {
+          color: #d0cfd2;
+          transition: color 0.18s;
+          pointer-events: none;
         }
       }
-      .heart-container {
-        display: flex;
-        align-items: center;
 
-        .heart-checkbox {
-          display: none;
-        }
-
-        .heart-label {
-          cursor: pointer;
-          position: relative;
-          display: flex;
-          align-items: center;
-          font-size: 1.35em;
-          margin-left: 1em;
-
-          .heart-full {
-            color: $color-primary;
-            position: absolute;
-            left: 0;
-            opacity: 0;
-            transition: opacity 0.18s;
-            pointer-events: none;
-          }
-          .heart-empty {
-            color: #d0cfd2;
-            transition: color 0.18s;
-            pointer-events: none;
-          }
-        }
-
-        .heart-checkbox:checked + .heart-label .heart-full {
-          opacity: 1;
-        }
-        .heart-checkbox:checked + .heart-label .heart-empty {
-          opacity: 0;
-        }
+      .heart-checkbox:checked + .heart-label .heart-full {
+        opacity: 1;
+      }
+      .heart-checkbox:checked + .heart-label .heart-empty {
+        opacity: 0;
       }
     }
   }

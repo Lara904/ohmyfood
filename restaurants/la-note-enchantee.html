@@ -24,139 +24,185 @@
     <section class="restaurant-menu">
       <div class="restaurant-header">
         <h1>La note enchantée</h1>
-        <i class="fa-regular fa-heart"></i>
+        <div class="heart-wrapper">
+          <input type="checkbox" id="heart1" class="heart-checkbox">
+          <label for="heart1" class="heart">
+            <i class="fa-regular fa-heart empty-heart"></i>
+            <i class="fa-solid fa-heart full-heart"></i>
+          </label>
+        </div>
       </div>
 
-      <div class="menu-section">
+        <div class="menu-section">
         <h2>Entrées</h2>
-        <article class="dish">
-          <div class="dish-info">
-            <h3>Ravioles de foie gras</h3>
-            <p>Accompagnées de leur crème à la truffe</p>
-          </div>
-          <div class="dish-price">25€</div>
-          <div class="dish-confirmation">
-            <div class="dish-wrapIcon">
-              <i class="dish-icon fas fa-check"></i>
-            </div>
-          </div>
-        </article>
-        <article class="dish">
-          <div class="dish-info">
-            <h3>Caviar osciètre</h3>
-            <p>Sur blini à la farine de blé noir</p>
-          </div>
-          <div class="dish-price">35€</div>
-          <div class="dish-confirmation">
-            <div class="dish-wrapIcon">
-              <i class="dish-icon fas fa-check"></i>
-            </div>
-          </div>
-        </article>
-        <article class="dish">
-          <div class="dish-info">
-            <h3>Homard et espuma de potiron</h3>
-            <p>Marinés aux zestes d'orange</p>
-          </div>
-          <div class="dish-price">20€</div>
-          <div class="dish-confirmation">
-            <div class="dish-wrapIcon">
-              <i class="dish-icon fas fa-check"></i>
-            </div>
-          </div>
-        </article>
-        <article class="dish">
-          <div class="dish-info">
-            <h3>Foie gras de canard cuit entier</h3>
-            <p>Confiture de figue et pain toasté</p>
-          </div>
-          <div class="dish-price">35€</div>
-          <div class="dish-confirmation">
-            <div class="dish-wrapIcon">
-              <i class="dish-icon fas fa-check"></i>
-            </div>
-          </div>
-        </article>
+
+        <div class="dish">
+          <input type="checkbox" id="dish1" class="dish-toggle">
+          <label for="dish1" class="dish-label">
+            <span class="dish-info">
+              <span class="dish-title">Ravioles de foie gras</span>
+              <span class="dish-description">Accompagnées de leur crème à la truffe</span>
+            </span>
+            <span class="dish-price">25€</span>
+            <span class="dish-confirmation">
+              <span class="dish-wrapIcon">
+                <i class="dish-icon fas fa-check"></i>
+              </span>
+            </span>
+          </label>
+        </div>
+
+        <div class="dish">
+          <input type="checkbox" id="dish2" class="dish-toggle">
+          <label for="dish2" class="dish-label">
+            <span class="dish-info">
+              <span class="dish-title">Caviar osciètre</span>
+              <span class="dish-description">Sur blini à la farine de blé noir</span>
+            </span>
+            <span class="dish-price">35€</span>
+            <span class="dish-confirmation">
+              <span class="dish-wrapIcon">
+                <i class="dish-icon fas fa-check"></i>
+              </span>
+            </span>
+          </label>
+        </div>
+
+        <div class="dish">
+          <input type="checkbox" id="dish3" class="dish-toggle">
+          <label for="dish3" class="dish-label">
+            <span class="dish-info">
+              <span class="dish-title">Homard et espuma de potiron</span>
+              <span class="dish-description">Marinés aux zestes d'orange</span>
+            </span>
+            <span class="dish-price">20€</span>
+            <span class="dish-confirmation">
+              <span class="dish-wrapIcon">
+                <i class="dish-icon fas fa-check"></i>
+              </span>
+            </span>
+          </label>
+        </div>
+
+        <div class="dish">
+          <input type="checkbox" id="dish4" class="dish-toggle">
+          <label for="dish4" class="dish-label">
+            <span class="dish-info">
+              <span class="dish-title">Foie gras de canard cuit entier</span>
+              <span class="dish-description">Confiture de figue et pain toasté</span>
+            </span>
+            <span class="dish-price">35€</span>
+            <span class="dish-confirmation">
+              <span class="dish-wrapIcon">
+                <i class="dish-icon fas fa-check"></i>
+              </span>
+            </span>
+          </label>
+        </div>
       </div>
 
       <div class="menu-section">
         <h2>Plats</h2>
-        <article class="dish">
-          <div class="dish-info">
-            <h3>Noix de coquilles Saint-Jacques</h3>
-            <p>Sur lit de purée de céleri-rave</p>
-          </div>
-          <div class="dish-price">40€</div>
-          <div class="dish-confirmation">
-            <div class="dish-wrapIcon">
-              <i class="dish-icon fas fa-check"></i>
-            </div>
-          </div>
-        </article>
-        <article class="dish">
-          <div class="dish-info">
-            <h3>Langoustine poêlée</h3>
-            <p>Purée de patate douce</p>
-          </div>
-          <div class="dish-price">35€</div>
-          <div class="dish-confirmation">
-            <div class="dish-wrapIcon">
-              <i class="dish-icon fas fa-check"></i>
-            </div>
-          </div>
-        </article>
-        <article class="dish">
-          <div class="dish-info">
-            <h3>Mijoté de queue de bœuf</h3>
-            <p>Et riz sauvage aux zestes de citron</p>
-          </div>
-          <div class="dish-price">44€</div>
-          <div class="dish-confirmation">
-            <div class="dish-wrapIcon">
-              <i class="dish-icon fas fa-check"></i>
-            </div>
-          </div>
-        </article>
+
+        <div class="dish">
+          <input type="checkbox" id="dish5" class="dish-toggle">
+          <label for="dish5" class="dish-label">
+            <span class="dish-info">
+              <span class="dish-title">Noix de coquilles Saint-Jacques</span>
+              <span class="dish-description">Sur lit de purée de céleri-rave</span>
+            </span>
+            <span class="dish-price">40€</span>
+            <span class="dish-confirmation">
+              <span class="dish-wrapIcon">
+                <i class="dish-icon fas fa-check"></i>
+              </span>
+            </span>
+          </label>
+        </div>
+
+        <div class="dish">
+          <input type="checkbox" id="dish6" class="dish-toggle">
+          <label for="dish6" class="dish-label">
+            <span class="dish-info">
+              <span class="dish-title">Langoustine poêlée</span>
+              <span class="dish-description">Purée de patate douce</span>
+            </span>
+            <span class="dish-price">35€</span>
+            <span class="dish-confirmation">
+              <span class="dish-wrapIcon">
+                <i class="dish-icon fas fa-check"></i>
+              </span>
+            </span>
+          </label>
+        </div>
+
+        <div class="dish">
+          <input type="checkbox" id="dish7" class="dish-toggle">
+          <label for="dish7" class="dish-label">
+            <span class="dish-info">
+              <span class="dish-title">Mijoté de queue de bœuf</span>
+              <span class="dish-description">Et riz sauvage aux zestes de citron</span>
+            </span>
+            <span class="dish-price">44€</span>
+            <span class="dish-confirmation">
+              <span class="dish-wrapIcon">
+                <i class="dish-icon fas fa-check"></i>
+              </span>
+            </span>
+          </label>
+        </div>
       </div>
 
       <div class="menu-section">
         <h2>Desserts</h2>
-        <article class="dish">
-          <div class="dish-info">
-            <h3>Macaron noisette et chocolat</h3>
-            <p>Glace au caramel brun et sel de Guérande</p>
-          </div>
-          <div class="dish-price">18€</div>
-          <div class="dish-confirmation">
-            <div class="dish-wrapIcon">
-              <i class="dish-icon fas fa-check"></i>
-            </div>
-          </div>
-        </article>
-        <article class="dish">
-          <div class="dish-info">
-            <h3>Baba au rhum revisité</h3>
-            <p>Avec son coulis de citron</p>
-          </div>
-          <div class="dish-price">22€</div>
-          <div class="dish-confirmation">
-            <div class="dish-wrapIcon">
-              <i class="dish-icon fas fa-check"></i>
-            </div>
-          </div>
-        </article>
-        <article class="dish">
-          <div class="dish-info">
-            <h3>Tarte au citron meringuée</h3>
-            <p>Déstructurée</p>
-          </div>
-          <div class="dish-price">23€</div>
-          <div class="dish-confirmation">
-            <div class="dish-wrapIcon">
-              <i class="dish-icon fas fa-check"></i>
-            </div>
-          </div>
-        </article>
+
+        <div class="dish">
+          <input type="checkbox" id="dish8" class="dish-toggle">
+          <label for="dish8" class="dish-label">
+            <span class="dish-info">
+              <span class="dish-title">Macaron noisette et chocolat</span>
+              <span class="dish-description">Glace au caramel brun et sel de Guérande</span>
+            </span>
+            <span class="dish-price">18€</span>
+            <span class="dish-confirmation">
+              <span class="dish-wrapIcon">
+                <i class="dish-icon fas fa-check"></i>
+              </span>
+            </span>
+          </label>
+        </div>
+
+        <div class="dish">
+          <input type="checkbox" id="dish9" class="dish-toggle">
+          <label for="dish9" class="dish-label">
+            <span class="dish-info">
+              <span class="dish-title">Baba au rhum revisité</span>
+              <span class="dish-description">Avec son coulis de citron</span>
+            </span>
+            <span class="dish-price">22€</span>
+            <span class="dish-confirmation">
+              <span class="dish-wrapIcon">
+                <i class="dish-icon fas fa-check"></i>
+              </span>
+            </span>
+          </label>
+        </div>
+
+        <div class="dish">
+          <input type="checkbox" id="dish10" class="dish-toggle">
+          <label for="dish10" class="dish-label">
+            <span class="dish-info">
+              <span class="dish-title">Tarte au citron meringuée</span>
+              <span class="dish-description">Déstructurée</span>
+            </span>
+            <span class="dish-price">23€</span>
+            <span class="dish-confirmation">
+              <span class="dish-wrapIcon">
+                <i class="dish-icon fas fa-check"></i>
+              </span>
+            </span>
+          </label>
+        </div>
       </div>
 
       <a href="#" class="command-button">Commander</a>
@@ -169,7 +215,7 @@
       <li><i class="fa-solid fa-utensils"></i><a href="#">Proposer un restaurant</a></li>
       <li><i class="fa-solid fa-handshake-angle"></i><a href="#">Devenir partenaire</a></li>
       <li><a href="#">Mentions légales</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="mailto:contact@ohmyfood.com">Contact</a></li>
     </ul>
   </footer>
 

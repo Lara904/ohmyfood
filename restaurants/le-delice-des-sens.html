@@ -24,127 +24,169 @@
     <section class="restaurant-menu">
       <div class="restaurant-header">
         <h1>Le délice des sens</h1>
-        <i class="fa-regular fa-heart"></i>
+        <div class="heart-wrapper">
+          <input type="checkbox" id="heart1" class="heart-checkbox">
+          <label for="heart1" class="heart">
+            <i class="fa-regular fa-heart empty-heart"></i>
+            <i class="fa-solid fa-heart full-heart"></i>
+          </label>
+        </div>
       </div>
 
       <div class="menu-section">
         <h2>Entrées</h2>
-        <article class="dish">
-          <div class="dish-info">
-            <h3>Tartare de thon</h3>
-            <p>Assaisonné au yuzu</p>
-          </div>
-          <div class="dish-price">25€</div>
-          <div class="dish-confirmation">
-            <div class="dish-wrapIcon">
-              <i class="dish-icon fas fa-check"></i>
-            </div>
-          </div>
-        </article>
-        <article class="dish">
-          <div class="dish-info">
-            <h3>Bouchée de homard croustillant</h3>
-            <p>Et sa farandole de petits légumes</p>
-          </div>
-          <div class="dish-price">35€</div>
-          <div class="dish-confirmation">
-            <div class="dish-wrapIcon">
-              <i class="dish-icon fas fa-check"></i>
-            </div>
-          </div>
-        </article>
-        <article class="dish">
-          <div class="dish-info">
-            <h3>Velouté de cèpes</h3>
-            <p>Aux truffes</p>
-          </div>
-          <div class="dish-price">20€</div>
-          <div class="dish-confirmation">
-            <div class="dish-wrapIcon">
-              <i class="dish-icon fas fa-check"></i>
-            </div>
-          </div>
-        </article>
+
+        <div class="dish">
+          <input type="checkbox" id="dish1" class="dish-toggle">
+          <label for="dish1" class="dish-label">
+            <span class="dish-info">
+              <span class="dish-title">Tartare de thon</span>
+              <span class="dish-description">Assaisonné au yuzu</span>
+            </span>
+            <span class="dish-price">25€</span>
+            <span class="dish-confirmation">
+              <span class="dish-wrapIcon">
+                <i class="dish-icon fas fa-check"></i>
+              </span>
+            </span>
+          </label>
+        </div>
+
+        <div class="dish">
+          <input type="checkbox" id="dish2" class="dish-toggle">
+          <label for="dish2" class="dish-label">
+            <span class="dish-info">
+              <span class="dish-title">Bouchée de homard croustillant</span>
+              <span class="dish-description">Et sa farandole de petits légumes</span>
+            </span>
+            <span class="dish-price">35€</span>
+            <span class="dish-confirmation">
+              <span class="dish-wrapIcon">
+                <i class="dish-icon fas fa-check"></i>
+              </span>
+            </span>
+          </label>
+        </div>
+
+        <div class="dish">
+          <input type="checkbox" id="dish3" class="dish-toggle">
+          <label for="dish3" class="dish-label">
+            <span class="dish-info">
+              <span class="dish-title">Velouté de cèpes</span>
+              <span class="dish-description">Aux truffes</span>
+            </span>
+            <span class="dish-price">20€</span>
+            <span class="dish-confirmation">
+              <span class="dish-wrapIcon">
+                <i class="dish-icon fas fa-check"></i>
+              </span>
+            </span>
+          </label>
+        </div>
       </div>
 
       <div class="menu-section">
         <h2>Plats</h2>
-        <article class="dish">
-          <div class="dish-info">
-            <h3>Poulet rôti aux herbes de Provence</h3>
-            <p>Et sa crème de truffe</p>
-          </div>
-          <div class="dish-price">40€</div>
-          <div class="dish-confirmation">
-            <div class="dish-wrapIcon">
-              <i class="dish-icon fas fa-check"></i>
-            </div>
-          </div>
-        </article>
-        <article class="dish">
-          <div class="dish-info">
-            <h3>Langouste rôtie</h3>
-            <p>Et ses légumes de saison</p>
-          </div>
-          <div class="dish-price">35€</div>
-          <div class="dish-confirmation">
-            <div class="dish-wrapIcon">
-              <i class="dish-icon fas fa-check"></i>
-            </div>
-          </div>
-        </article>
-        <article class="dish">
-          <div class="dish-info">
-            <h3>Côte de bœuf Angus</h3>
-            <p>Et sa purée de panais</p>
-          </div>
-          <div class="dish-price">44€</div>
-          <div class="dish-confirmation">
-            <div class="dish-wrapIcon">
-              <i class="dish-icon fas fa-check"></i>
-            </div>
-          </div>
-        </article>
+
+        <div class="dish">
+          <input type="checkbox" id="dish4" class="dish-toggle">
+          <label for="dish4" class="dish-label">
+            <span class="dish-info">
+              <span class="dish-title">Poulet rôti aux herbes de Provence</span>
+              <span class="dish-description">Et sa crème de truffe</span>
+            </span>
+            <span class="dish-price">40€</span>
+            <span class="dish-confirmation">
+              <span class="dish-wrapIcon">
+                <i class="dish-icon fas fa-check"></i>
+              </span>
+            </span>
+          </label>
+        </div>
+
+        <div class="dish">
+          <input type="checkbox" id="dish5" class="dish-toggle">
+          <label for="dish5" class="dish-label">
+            <span class="dish-info">
+              <span class="dish-title">Langouste rôtie</span>
+              <span class="dish-description">Et ses légumes de saison</span>
+            </span>
+            <span class="dish-price">35€</span>
+            <span class="dish-confirmation">
+              <span class="dish-wrapIcon">
+                <i class="dish-icon fas fa-check"></i>
+              </span>
+            </span>
+          </label>
+        </div>
+
+        <div class="dish">
+          <input type="checkbox" id="dish6" class="dish-toggle">
+          <label for="dish6" class="dish-label">
+            <span class="dish-info">
+              <span class="dish-title">Côte de bœuf Angus</span>
+              <span class="dish-description">Et sa purée de panais</span>
+            </span>
+            <span class="dish-price">44€</span>
+            <span class="dish-confirmation">
+              <span class="dish-wrapIcon">
+                <i class="dish-icon fas fa-check"></i>
+              </span>
+            </span>
+          </label>
+        </div>
       </div>
 
       <div class="menu-section">
         <h2>Desserts</h2>
-        <article class="dish">
-          <div class="dish-info">
-            <h3>Farandole de desserts</h3>
-            <p>Du chef</p>
-          </div>
-          <div class="dish-price">18€</div>
-          <div class="dish-confirmation">
-            <div class="dish-wrapIcon">
-              <i class="dish-icon fas fa-check"></i>
-            </div>
-          </div>
-        </article>
-        <article class="dish">
-          <div class="dish-info">
-            <h3>Crème brûlée</h3>
-            <p>Revisitée</p>
-          </div>
-          <div class="dish-price">22€</div>
-          <div class="dish-confirmation">
-            <div class="dish-wrapIcon">
-              <i class="dish-icon fas fa-check"></i>
-            </div>
-          </div>
-        </article>
-        <article class="dish">
-          <div class="dish-info">
-            <h3>Tiramisu</h3>
-            <p>À la noisette</p>
-          </div>
-          <div class="dish-price">23€</div>
-          <div class="dish-confirmation">
-            <div class="dish-wrapIcon">
-              <i class="dish-icon fas fa-check"></i>
-            </div>
-          </div>
-        </article>
+
+        <div class="dish">
+          <input type="checkbox" id="dish7" class="dish-toggle">
+          <label for="dish7" class="dish-label">
+            <span class="dish-info">
+              <span class="dish-title">Farandole de desserts</span>
+              <span class="dish-description">Du chef</span>
+            </span>
+            <span class="dish-price">18€</span>
+            <span class="dish-confirmation">
+              <span class="dish-wrapIcon">
+                <i class="dish-icon fas fa-check"></i>
+              </span>
+            </span>
+          </label>
+        </div>
+
+        <div class="dish">
+          <input type="checkbox" id="dish8" class="dish-toggle">
+          <label for="dish8" class="dish-label">
+            <span class="dish-info">
+              <span class="dish-title">Crème brûlée</span>
+              <span class="dish-description">Revisitée</span>
+            </span>
+            <span class="dish-price">22€</span>
+            <span class="dish-confirmation">
+              <span class="dish-wrapIcon">
+                <i class="dish-icon fas fa-check"></i>
+              </span>
+            </span>
+          </label>
+        </div>
+
+        <div class="dish">
+          <input type="checkbox" id="dish9" class="dish-toggle">
+          <label for="dish9" class="dish-label">
+            <span class="dish-info">
+              <span class="dish-title">Tiramisu</span>
+              <span class="dish-description">À la noisette</span>
+            </span>
+            <span class="dish-price">23€</span>
+            <span class="dish-confirmation">
+              <span class="dish-wrapIcon">
+                <i class="dish-icon fas fa-check"></i>
+              </span>
+            </span>
+          </label>
+        </div>
       </div>
 
       <a href="#" class="command-button">Commander</a>
@@ -157,7 +199,7 @@
       <li><i class="fa-solid fa-utensils"></i><a href="#">Proposer un restaurant</a></li>
       <li><i class="fa-solid fa-handshake-angle"></i><a href="#">Devenir partenaire</a></li>
       <li><a href="#">Mentions légales</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="mailto:contact@ohmyfood.com">Contact</a></li>
     </ul>
   </footer>
 

@@ -13,7 +13,7 @@
     <div id="loader">
         <div class="spinner"></div>
     </div>
-    <div id="content" style="display: none;">
+    <div class="content">
 
         <header>
             <img src="assets/images/ohmyfood.png" alt="Logo Ohmyfood" class="logo">
@@ -53,15 +53,15 @@
                                 <h3>La palette du goût</h3>
                                 <p>Ménilmontant</p>
                             </div>
-                            <div class="heart-container">
-                                <input type="checkbox" id="heart1" class="heart-checkbox" />
-                                <label for="heart1" class="heart-label">
-                                    <i class="fa-regular fa-heart heart-empty"></i>
-                                    <i class="fa-solid fa-heart heart-full"></i>
-                                </label>
-                            </div> 
                         </div>
                     </a>
+                    <div class="heart-container">
+                        <input type="checkbox" id="heart1" class="heart-checkbox" >
+                        <label for="heart1" class="heart-label">
+                            <i class="fa-regular fa-heart heart-empty"></i>
+                            <i class="fa-solid fa-heart heart-full"></i>
+                        </label>
+                    </div>
                 </article>
         
                 <article class="card">
@@ -75,15 +75,15 @@
                                 <h3>La note enchantée</h3>
                                 <p>Charbonne</p>
                             </div>
-                            <div class="heart-container">
-                                <input type="checkbox" id="heart2" class="heart-checkbox" />
-                                <label for="heart2" class="heart-label">
-                                    <i class="fa-regular fa-heart heart-empty"></i>
-                                    <i class="fa-solid fa-heart heart-full"></i>
-                                </label>
-                            </div> 
                         </div>
                     </a>
+                    <div class="heart-container">
+                        <input type="checkbox" id="heart2" class="heart-checkbox" >
+                        <label for="heart2" class="heart-label">
+                            <i class="fa-regular fa-heart heart-empty"></i>
+                            <i class="fa-solid fa-heart heart-full"></i>
+                        </label>
+                    </div>
                 </article>
         
                 <article class="card">
@@ -96,36 +96,35 @@
                                 <h3>À la française</h3>
                                 <p>Cité Rouge</p>
                             </div>
-                            <div class="heart-container">
-                                <input type="checkbox" id="heart3" class="heart-checkbox" />
-                                <label for="heart3" class="heart-label">
-                                    <i class="fa-regular fa-heart heart-empty"></i>
-                                    <i class="fa-solid fa-heart heart-full"></i>
-                                </label>
-                            </div> 
                         </div>
                     </a>
+                    <div class="heart-container">
+                        <input type="checkbox" id="heart3" class="heart-checkbox" >
+                        <label for="heart3" class="heart-label">
+                            <i class="fa-regular fa-heart heart-empty"></i>
+                            <i class="fa-solid fa-heart heart-full"></i>
+                        </label>
+                    </div>
                 </article>
+                
                 <article class="card">
                     <a href="restaurants/le-delice-des-sens.html">
-                        <div class="card-img">
-                            <img src="assets/images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Le délice des sens">
-                            
+                        <div class="card-img">                            <img src="assets/images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Le délice des sens">
                         </div>
                         <div class="card-text">
                             <div class="info">
                                 <h3>Le délice des sens</h3>
                                 <p>Folie-Méricourt</p>
                             </div>
-                            <div class="heart-container">
-                                <input type="checkbox" id="heart4" class="heart-checkbox" />
-                                <label for="heart4" class="heart-label">
-                                    <i class="fa-regular fa-heart heart-empty"></i>
-                                    <i class="fa-solid fa-heart heart-full"></i>
-                                </label>
-                            </div> 
                         </div>
                     </a>
+                    <div class="heart-container">
+                        <input type="checkbox" id="heart4" class="heart-checkbox" >
+                        <label for="heart4" class="heart-label">
+                            <i class="fa-regular fa-heart heart-empty"></i>
+                            <i class="fa-solid fa-heart heart-full"></i>
+                        </label>
+                    </div>
                 </article>
             </section>
         </main>
@@ -136,21 +135,10 @@
                 <li><i class="fa-solid fa-utensils"></i><a href="#">Proposer un restaurant</a></li>
                 <li><i class="fa-solid fa-handshake-angle"></i><a href="#">Devenir partenaire</a></li>
                 <li><a href="#">Mentions légales</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="mailto:contact@ohmyfood.com">Contact</a></li>
             </ul>
         </footer>
     </div>
 
-    <script>
-        window.addEventListener('load', function () {
-        const loader = document.getElementById('loader');
-        const content = document.getElementById('content');
-
-        setTimeout(() => {
-            loader.style.display = 'none';
-            content.style.display = 'block';
-        }, 1000); // 1s de chargement simulé
-        });
-    </script>
 </body>
 </html>
